@@ -19,3 +19,8 @@ body {
   padding-bottom: 1em;
   width: 100px;
 }
+
+.txt{
+    text-align: center;
+     vertical-align: middle;
+}
