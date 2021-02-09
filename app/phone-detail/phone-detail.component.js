@@ -12,6 +12,10 @@ angular.
         self.setImage = function setImage(imageUrl) {
           self.mainImageUrl = imageUrl;
         };
+        
+        self.onDblclick = function onDblclick(imageUrl) {
+          alert('You double-clicked image: ' + imageUrl);
+        };
 
         $http.get('phones/' + $routeParams.phoneId + '.json').then(function(response) {
           self.phone = response.data;
