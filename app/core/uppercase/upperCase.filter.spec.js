@@ -5,7 +5,7 @@ describe('checkmark', function() {
 
     it('should convert boolean values to unicode checkmark or cross',
         inject(function(uppercaseFilter) {
-            expect(uppercaseFilter).toBe(uppercaseFilter.toUpperCase());
+            expect(uppercaseFilter('ASA')).toBe('ASA');
         })
     );
 })
