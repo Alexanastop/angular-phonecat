@@ -2,8 +2,8 @@
 
 angular.
   module('core').
-  filter('checkmark', function() {
+  filter('uppercase', function() {
     return function(input) {
-      return input ? '\u2713' : '\u2718';
+      return input.toUpperCase();
     };
   });
