@@ -1,5 +1,4 @@
-<div class="container-fluid">
-    <p> Hello, {{$ctrl.name}}!!</p>
+<div class="container-fluid">   
     <div class="row">
         <div class="col-md-2">
         <!--Sidebar content-->
@@ -17,21 +16,24 @@
             <option value="">None</option>
           </select>
         </p>
+
+       
+          <p> Number of phones: {{$ctrl.phones.length}}</p>
   
       </div>
       <div class="col-md-10">
         <!--Body content-->
   
         <ul class="phones">
-          <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-            <span>{{phone.name}}</span>
+          <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+            <a href="#!/phones/{{phone.id}}" class="thumb">
+              <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" class="thumbnail, img"/>
+            </a>
+            <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
             <p>{{phone.snippet}}</p>
           </li>
-        </ul>
-        
-        <div class="col-md-2">
-            <p> Number of phones: {{$ctrl.phones.length}}</p>
-        </div>
+        </ul>       
+       
       </div>
     </div>
   </div>
