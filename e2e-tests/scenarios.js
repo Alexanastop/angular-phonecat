@@ -79,22 +79,34 @@ describe('PhoneCat Application', function() {
 
   });
   
-    describe('rowNumber', function() {
-    
-      beforeEach(function() {
-        browser.get('index.html');
-      });
-  
-      it('should filter the row into the search box', function() {
-        var row = element.all(by.repeater('i in [0, 1, 2, 3, 4, 5, 6, 7]'));
-        var query = element(by.model('$ctrl.query'));
-  
-        expect([0, 1, 2, 3, 4, 5, 6, 7].count()).toBe(8);
-  
-        query.sendKeys('1');
-        expect(phoneList.count()).toBe(1);
-      });
+  describe('View: Phone detail', function() {
 
+    beforeEach(function() {
+      browser.get('index.html#!/phones/nexus-s');
     });
+  
+    it('should display the `nexus-s` page', function() {
+      expect(element(by.binding('$ctrl.phone.name')).getText()).toBe('Nexus S');
+    });
+  
+  });
+
+  describe('rowNumber', function() {
+  
+    beforeEach(function() {
+      browser.get('index.html');
+    });
+
+    it('should filter the row into the search box', function() {
+      var row = element.all(by.repeater('i in [0, 1, 2, 3, 4, 5, 6, 7]'));
+      var query = element(by.model('$ctrl.query'));
+
+      expect([0, 1, 2, 3, 4, 5, 6, 7].count()).toBe(8);
+
+      query.sendKeys('1');
+      expect(phoneList.count()).toBe(1);
+    });
+
+  });
 
 });
