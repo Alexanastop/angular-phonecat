@@ -12,11 +12,6 @@ body {
   padding-top: 15px;
 }
 
-.img {
-    height: 100px;
-    width: 98px;
-}
-
 .thumb {
   float: left;
   height: 100px;
@@ -24,13 +19,3 @@ body {
   padding-bottom: 1em;
   width: 100px;
 }
-
-.thumbnail{
-    display: block;
-    padding: 4px;
-    margin-bottom: 20px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
